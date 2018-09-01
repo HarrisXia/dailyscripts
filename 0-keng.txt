@@ -1,0 +1,12 @@
+TensorFlow in nvidia-docker: failed call to cuInit: CUDA_ERROR_UNKNOWN
+sudo update-alternatives --config x86_64-linux-gnu_gl_conf
+
+
+Ubuntu 解压.zip文件乱码：
+
+1. 安装unar 
+
+2. unar -e  GB18030   *.zip
+
+使用命令conda create -n tensorflow pip python=3.6 重新创建一个环境。source activate tensorflow 进入tensorflow环境
+使用命令conda install tensorflow-gpu==1.8 安装tensorflow-gpu。是不是感到震惊了，这么简单！确实简单。 
