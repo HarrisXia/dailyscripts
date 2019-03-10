@@ -1,0 +1,1 @@
+find -name '*.xml' |xargs perl -pi -e 's|.jpg</filename>|.png</filename>|g'

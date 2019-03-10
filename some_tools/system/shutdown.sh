@@ -1,0 +1,1 @@
+echo "000000" | sudo -S shutdown -h 5
