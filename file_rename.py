@@ -10,15 +10,15 @@ import pdb
 
 
 
-file_dir = '/home/xia/1-huafei/tianchi/bu/fs/fs_test_process'
+file_dir = '/home/xia/0-github/2-fusion/xiahan/GAN/fusiondata/trainA'
 
     
 def file_name(file_dir):
     #newnames = ['rt_90_','rt_180_','rt_270_','aug_']
-    newnames = ['fs_test_yolo']
+    newnames = ['VIS']
 
     for newname in newnames:
-        rename_dir = '/home/xia/1-huafei/tianchi/bu/fs/'+newname
+        rename_dir = '/home/xia/0-github/2-fusion/xiahan/GAN/fusiondata/trainA'
     
         new_path = rename_dir
         if not os.path.exists(rename_dir):
@@ -44,13 +44,13 @@ def file_name(file_dir):
 
         for root, dirs, files in os.walk(new_path):
             #os.path.join(dirpath, dirnames)
-            print(root)
-            print(dirs)
+            #print(root)
+            #print(dirs)
             files.sort()
             print(files)
             
     #############def rename()################
-            count = 6784           #file count of /multi_dataset
+            count = 0           #file count of /multi_dataset
             os.chdir(new_path)
             for file_name in files:
         ##########split the filepath, filename and extension##########
@@ -70,18 +70,23 @@ def file_name(file_dir):
                 #new_name = re.sub(r'^(\_20171030)*', "", filename)
                 name_splict = re.split(r'(2018.06.)\s*',file_name)
                 #pdb.set_trace()#########
-                new_name = newname+file_name
+                #new_name = newname+file_name
                 #new_name = newname+name_splict[2]
         ##########for yolo train###################
-                sp_dot = re.split(r'[ ||.]',file_name)  
+                #sp_dot = re.split(r'[ ||.]',file_name) 
+                sp_dot = re.split(r'[.]',file_name) 
                 #sp = re.split(r'[.|| ]',file_name)
                 #new_name = '_'.join(sp[0:4])+'.jpg'
-                new_name = '_'.join(sp_dot[:-1])+'.jpg'
+                #new_name = '_'.join(sp_dot[:-1])+'.jpg'
+                #pdb.set_trace()
         ########rename to form of 'x_y'###########
-                x = count + 2
-                x = x // 2
-                y = count % 2 + 1
+                x = count + 1
+                #x = x // 2
+                #y = count % 2 + 1
                 #new_name = str(math.floor(x)) + '_' + str(y)
+                #new_name = str(math.floor(x))+'.bmp'
+                #print(sp_dot[1])
+                new_name = 'A_'+str(math.floor(x))+'.'+sp_dot[1]
         
                 print(new_name)
                 
