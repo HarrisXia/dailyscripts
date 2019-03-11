@@ -20,10 +20,7 @@ coco['categories'] = []
  
 image_id = 2020000001 #对每张图片进行编号，初始编号
 category_item_id = 1
-classname = ['small-vehicle', 'large-vehicle', 'plane','harbor', 'ship', 
-             'tennis-court', 'soccer-ball-field', 'ground-track-field',
-             'baseball-diamond', 'swimming-pool', 'roundabout', 'basketball-court', 
-             'storage-tank', 'bridge', 'helicopter']#更改为你自己的类别,与voc_2007_train中的一致
+classname = ['tkdhj', 'dhj', 'dj','dcdr', 'jd']#更改为你自己的类别,与voc_2007_train中的一致
  
  
 def GetFileFromThisRootDir(dir,ext = None):
@@ -87,13 +84,8 @@ def WriteCOCOFiles(pic_path):
  
  
 if __name__ == '__main__':
-    pic_dir = '/media/yantianwang/Elements/DOTA_biqi/Org_uncleaned/origin/testsplit/imagesSplit'    #图片存放的路径
-    json_file = '/home/yantianwang/clone/VOC2007/Annotations/voc_2007_test.json'  #生成的coco路径
+    pic_dir = '/home/xia/1-huafei/tianchi/jin/jin1/jinnan2_round1_test_a_20190306/val2014'    #图片存放的路径
+    json_file = '/home/xia/1-huafei/tianchi/xbu/Detectron.pytorch/data/coco/annotations/instances_val2014.json'  #生成的coco路径
     pic_path = GetFileFromThisRootDir(pic_dir,ext = None)  #每一个图片的路径
     WriteCOCOFiles(pic_path)
 json.dump(coco, open(json_file, 'w'))
---------------------- 
-作者：Mr_health 
-来源：CSDN 
-原文：https://blog.csdn.net/Mr_health/article/details/80817934 
-版权声明：本文为博主原创文章，转载请附上博文链接！
